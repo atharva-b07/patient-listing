@@ -1,0 +1,109 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Documentation Rules
+
+## Description
+Defines how to write and organize documentation for components, utility files, and functions in the codebase. This rule ensures all code is understandable, maintainable, and easy to onboard for new developers.
+
+## When to Apply
+- When creating or updating any component, utility, or function
+- When adding new files to `src/components/`, `src/utils/`, `src/hooks/`, or `src/types/`
+
+## General Principles
+- Use clear, concise, and complete descriptions
+- Prefer JSDoc/TSDoc style comments for functions and utilities
+- Use file-level doc comments for components and utility files
+- Document all public APIs, props, parameters, and return values
+- Update documentation when code changes
+
+## File Placement Rules
+- Documentation should be placed directly above the relevant code (component, function, or utility)
+- For components: at the top of the file and above the component definition
+- For utility files: at the top of the file and above each exported function
+- For functions: above the function definition
+
+## Required Sections
+### For Components
+- File-level comment: Purpose, usage, and any important notes
+- Props documentation: List and describe all props (type, purpose, default)
+- Example usage (if non-trivial)
+
+### For Utility Files
+- File-level comment: Purpose and what utilities are included
+- Function-level JSDoc/TSDoc for each exported function
+
+### For Functions
+- JSDoc/TSDoc block including:
+  - Description
+  - Parameters (with types and purpose)
+  - Return value (with type and description)
+  - Example (if complex)
+
+## Formatting
+- Use standard JSDoc/TSDoc syntax for functions and TypeScript
+- Use Markdown in file-level comments for readability
+- Keep lines under 100 characters
+
+## Examples
+
+### Component Example
+```tsx
+/**
+ * PatientList Component
+ * ---------------------
+ * Displays a list of patients with filtering and sorting options.
+ *
+ * Props:
+ * - patients: Patient[] — Array of patient objects to display
+ * - onSelect: (id: string) => void — Callback when a patient is selected
+ *
+ * Example:
+ * <PatientList patients={data} onSelect={handleSelect} />
+ */
+export function PatientList({ patients, onSelect }: PatientListProps) {
+  // ...component code...
+}
+```
+
+### Utility File Example
+```ts
+/**
+ * dateUtils.ts
+ * ------------
+ * Utility functions for date formatting and parsing using Dayjs.
+ */
+
+/**
+ * Formats a date string to 'YYYY-MM-DD'.
+ * @param date - The date to format (string | Date)
+ * @returns Formatted date string
+ */
+export function formatDate(date: string | Date): string {
+  // ...function code...
+}
+```
+
+### Function Example
+```ts
+/**
+ * Calculates the BMI (Body Mass Index).
+ * @param weight - Weight in kilograms
+ * @param height - Height in meters
+ * @returns The BMI value as a number
+ * @example
+ * const bmi = calculateBMI(70, 1.75); // 22.86
+ */
+export function calculateBMI(weight: number, height: number): number {
+  // ...function code...
+}
+```
+
+## Best Practices
+- Keep documentation up to date with code changes
+- Use examples for complex logic or usage
+- Document edge cases and limitations
+- Prefer clarity over brevity
+- Use consistent terminology and style throughout the codebase
