@@ -1,0 +1,42 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Rules Index
+
+## Description
+Defines the overall project structure, frameworks, and links to all specific rules files. This file is always applied.
+
+## Frameworks & Libraries
+- React (with TypeScript)
+- Material UI (MUI) for UI components
+- Tailwind CSS for design tokens and utility classes
+- Dayjs for date handling
+- Vitest for testing
+
+## Folder Structure
+- `src/components/` — All React components (one file per component, PascalCase)
+- `src/pages/` — Page-level components (route entry points)
+- `src/types/` — TypeScript type definitions
+- `src/utils/` — Utility functions and mock data
+- `src/hooks/` — Custom React hooks
+- `src/test/` — All test files (one file per tested feature/component)
+- `src/lib/` — Shared library code (if any)
+- `public/` — Static assets (images, robots.txt, etc.)
+
+## File Placement Rules
+- All new components go in `src/components/`
+- All new hooks go in `src/hooks/`
+- All new types go in `src/types/`
+- All new utility functions go in `src/utils/`
+- All new tests go in `src/test/`
+- Static assets go in `public/`
+
+## Linked Rules
+- [Component Rules](mdc:components.mdc)
+- [Unit Testing Rules](mdc:unitesting.mdc)
+- [TypeScript & Types Rules](mdc:types.mdc) *(suggested)*
+- [CSS & Styling Rules](mdc:css.mdc) *(suggested)*
+- [Hooks Rules](mdc:hooks.mdc) *(suggested)*
+- [Utilities Rules](mdc:utils.mdc) *(suggested)*

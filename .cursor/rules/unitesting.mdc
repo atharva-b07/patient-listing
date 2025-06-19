@@ -1,0 +1,46 @@
+---
+description: Defines how to write unit test cases
+globs: 
+alwaysApply: false
+---
+# Unit Testing Rules
+
+## Description
+Defines how to write and organize unit test cases for the codebase. This rule is agent-requested and should only be applied when specifically asked to write unit tests.
+
+## Globs
+- src/test/**/*.test.ts
+- src/test/**/*.test.tsx
+
+## When to Apply
+- Only when explicitly requested to write unit test cases for a feature, component, or utility function
+
+## General
+- Use Vitest for all unit tests
+- Place all unit test files in `src/test/`
+- Name test files as `FeatureName.test.ts` or `ComponentName.test.tsx`
+- Use TypeScript for all tests
+
+## Structure
+- Use `describe`, `it`, and `expect` from Vitest
+- Import types from `src/types/` as needed
+- Mock data should be defined in the test file or imported from `src/utils/`
+- Test pure functions and component logic in isolation
+
+## Best Practices
+- Write tests for all filtering, CRUD, and utility logic
+- Use clear, descriptive test names
+- Cover edge cases and error handling
+- Add comments to explain complex test logic
+
+## Example Test Skeleton
+```ts
+import { describe, it, expect } from 'vitest';
+import { myUtilityFunction } from '../utils/myUtilityFunction';
+
+describe('myUtilityFunction', () => {
+  it('should return the correct result for valid input', () => {
+    // test code
+  });
+});
+```

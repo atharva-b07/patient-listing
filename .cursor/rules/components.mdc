@@ -1,0 +1,55 @@
+---
+description: Defines how Component has to be created
+globs: 
+alwaysApply: false
+---
+# Component Rules
+
+## Description
+Defines how to create, structure, and style React components, and how to write and document utility functions. This rule is always applied for component and utility creation.
+
+## Globs
+- src/components/**/*.tsx
+- src/utils/**/*.ts
+
+## When to Apply
+- When creating or editing React components
+- When writing utility functions for use in components
+
+## General
+- Use functional components only (React.FC or arrow function style)
+- Use TypeScript for all components
+- Each component in its own file, named `ComponentName.tsx`
+- Use PascalCase for component and file names
+
+## Structure
+- Place all components in `src/components/`
+- Export each component as default
+- Use MUI components for all UI elements (buttons, dialogs, forms, etc.)
+- Use Tailwind utility classes for layout, spacing, and design tokens (see `src/index.css` for custom properties)
+- Use props interfaces for all component props
+
+## Utility Functions
+- Place all utility functions in `src/utils/`
+- Utility functions must be pure and reusable
+- Write clear, concise JSDoc documentation for every utility function, including parameter and return type descriptions
+- Explain the purpose and usage of each utility function in comments where needed
+- For more details, see [Utilities Rules](mdc:utils.mdc)
+
+## Hooks
+- Place all custom hooks in `src/hooks/`
+- Use `use` prefix for hook names (e.g., `useMyHook`)
+- Document hook purpose and usage with JSDoc
+- For more details, see [Hooks Rules](mdc:hooks.mdc)
+
+## Example Utility Function
+```ts
+/**
+ * Calculates the age from a date of birth string.
+ * @param dateOfBirth - The date of birth in YYYY-MM-DD format
+ * @returns The calculated age as a number
+ */
+export function calculateAge(dateOfBirth: string): number {
+  // ...implementation
+}
+```
